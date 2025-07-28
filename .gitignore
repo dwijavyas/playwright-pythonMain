@@ -1,0 +1,7 @@
+uv.lock
+data/*
+.venv/
+__pycache__/
+.pytest_cache/
+playwright-report/
+*.log
