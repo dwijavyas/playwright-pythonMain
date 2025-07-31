@@ -23,6 +23,7 @@ This is a hybrid automation framework combining **UI and API testing** using **P
 - **Page Object Model (POM)** structure
 - **Network Interception** testing
 - Uses **pytest fixtures** and reusable utilities
+- Playwright Trace Viewer for visual debugging
 - GitHub integrated with `.gitignore` best practices
 
 ---
