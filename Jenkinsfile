@@ -24,8 +24,8 @@ pipeline {
         stage('Provide Test Data') {
             steps {
                 withCredentials([
-                    file(credentialsId: 'playwright-creds', variable: 'CREDS_FILE'),
-                    file(credentialsId: 'playwright-urls', variable: 'URLS_FILE')
+                    file(credentialsId: 'pp-creds', variable: 'CREDS_FILE'),
+                    file(credentialsId: 'pp-urls', variable: 'URLS_FILE')
         ]) {
             bat '''
             if not exist data mkdir data
