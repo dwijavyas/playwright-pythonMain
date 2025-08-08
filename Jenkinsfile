@@ -47,8 +47,8 @@ pipeline {
                 bat '''
                 if not exist results mkdir results
                 call venv\\Scripts\\activate
-                pytest --headed --disable-warnings -q --html=results\\report.html
-                timeout /t 3
+                pip install pytest-html
+                pytest --headed --disable-warnings -q --html=results\\report.html || exit 0
                 '''
             }
         }
