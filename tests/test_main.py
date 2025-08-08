@@ -23,7 +23,7 @@ def test_e2e_web_api(playwright: Playwright, page: Page, user_credentials, brows
 
     #create order(api)
     api_utils = APIUtils()
-    orderID = api_utils.createOrder(playwright, user_credentials)
+    orderID = api_utils.createOrder(playwright, user_credentials, url_data)
 
     #navigate(web)/login(web)
     loginPage = LoginPage(browserInstance)
