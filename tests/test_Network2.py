@@ -36,7 +36,7 @@ def test_Network_2(playwright: Playwright, page: Page, user_cred, url_data):
 #this is for extracting the token from api to avoid signing in everytime
 def test_session_storage(playwright: Playwright, user_cred, url_data):
     api_utils = APIUtils()
-    token = api_utils.getToken(playwright, user_cred)
+    token = api_utils.getToken(playwright, user_cred, url_data)
     
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
