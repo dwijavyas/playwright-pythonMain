@@ -26,22 +26,22 @@ pipeline {
                 withCredentials([
                     file(credentialsId: 'pp-creds', variable: 'CREDS_FILE'),
                     file(credentialsId: 'pp-urls', variable: 'URLS_FILE')
-        ]) {
-            bat '''
-            if not exist data mkdir data
-            copy "%CREDS_FILE%" data\\credentials.json
-            copy "%URLS_FILE%" data\\urls.json
-            '''
+                ]) {
+                    bat '''
+                    if not exist data mkdir data
+                    copy "%CREDS_FILE%" data\\credentials.json
+                    copy "%URLS_FILE%" data\\urls.json
+                    '''
+                }
+            }
         }
-    }
-}
-
 
         stage('Run Tests') {
             steps {
                 bat '''
+                if not exist results mkdir results
                 call venv\\Scripts\\activate
-                pytest --headed --disable-warnings -q
+                pytest --headed --disable-warnings -q --html=results\\report.html
                 '''
             }
         }
@@ -49,7 +49,14 @@ pipeline {
 
     post {
         always {
-            junit '**/reports/*.xml' // If you generate JUnit XML reports
+            publishHTML(target: [
+                reportDir: 'results',
+                reportFiles: 'report.html',
+                reportName: 'Test HTML Report',
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true
+            ])
         }
     }
 }
