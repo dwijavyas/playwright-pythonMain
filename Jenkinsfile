@@ -21,6 +21,22 @@ pipeline {
             }
         }
 
+        stage('Provide Test Data') {
+            steps {
+                withCredentials([
+                    file(credentialsId: 'playwright-creds', variable: 'CREDS_FILE'),
+                    file(credentialsId: 'playwright-urls', variable: 'URLS_FILE')
+        ]) {
+            bat '''
+            if not exist data mkdir data
+            copy "%CREDS_FILE%" data\\credentials.json
+            copy "%URLS_FILE%" data\\urls.json
+            '''
+        }
+    }
+}
+
+
         stage('Run Tests') {
             steps {
                 bat '''
