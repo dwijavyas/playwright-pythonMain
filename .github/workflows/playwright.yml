@@ -42,4 +42,4 @@ jobs:
 
       - name: Run tests
         run: |
-          xvfb-run python -m pytest
+          xvfb-run python -m pytest pytestDir/test_pw.py
