@@ -1,0 +1,14 @@
+{
+    "urls_list": {
+    
+            "url0": "https://rahulshettyacademy.com/",
+    
+            "url1": "https://rahulshettyacademy.com/client/",
+    
+            "url2": "https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*",
+    
+            "url3": "https://rahulshettyacademy.com/api/ecom/order/get-orders-details?id=*",
+    
+            "url4": "https://rahulshettyacademy.com/api/ecom/order/get-orders-details?id=6846474581a206953069c6a8"
+    }
+}
