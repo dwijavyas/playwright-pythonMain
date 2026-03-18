@@ -1,4 +1,4 @@
-#playwright and page are in built fixtures provided by pw
+#playwright and page are in built fixtures provided by playwright
 #page fixture to only use with chromium with headless mode (chrome and edge) not with firefox and headed
 
 import time
