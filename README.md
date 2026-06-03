@@ -1,4 +1,4 @@
-# 🧪 Playwright-Python Hybrid E2E UI + API Test Automation Framework
+# Playwright-Python Hybrid E2E UI + API Test Automation Framework
 
 ## Tech Stack
 
